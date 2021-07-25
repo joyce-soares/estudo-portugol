@@ -6,7 +6,6 @@ algoritmo "semnome"
 var
 n ,c : inteiro
 inicio
-c <- 0
 repita
    escreval(" ===============")
    escreval("|   M  E  N  U  |")
@@ -14,13 +13,26 @@ repita
    escreval("|  [1] De 1 a 10|")
    escreval("|  [2] De 10 a 1|")
    escreval("|  [3] Sair     |")
-   escreval(" ===============")
+   escreva(" ===============")
    leia(n)
    escolha n
    caso 1
-   c <- 1
-   escreva(cont, "..")
-   cont <- n+1
+      c <- 1
+      repita
+         escreval(c, "..")
+         c <- c+1
+      ate (c > 10)
+   caso 2
+      c <- 10
+      repita
+         escreval(c,"..")
+         c <- c-1
+      ate (c < 1)
+   caso 3
+      escreval("saindo..")
+   caso 4
+      escreval("Invalido!!")
+   fimescolha
 ate n = 3
 
 fimalgoritmo
